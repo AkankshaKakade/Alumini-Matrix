@@ -1,0 +1,98 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #20232a;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #61dafb;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.2s;
+}
+
+.sidebar nav a:hover {
+  color: #61dafb;
+  transform: translateX(5px);
+}
+
+/* Main content */
+.main-content {
+  flex-grow: 1;
+  position: relative; /* needed for video overlay */
+  overflow: hidden;
+  padding: 40px;
+}
+
+/* Video behind content */
+.dashboard-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Overlay content above video */
+.main-overlay {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+/* Text styling */
+.main-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.main-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.dashboard-buttons .btn {
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+/* Optional: add semi-transparent dark layer for readability */
+.main-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+ z-index: 1;
+}
